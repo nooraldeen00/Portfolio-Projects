@@ -1,0 +1,16 @@
+#ifndef _PSTAT_H_
+#define _PSTAT_H_
+
+#define NPROC 64
+
+struct pstat {
+  char name[NPROC][16];          // name of the process
+  int state[NPROC];   // the state of the process   
+  int inuse[NPROC];              // whether this slot of the process table is in use (1 or 0)
+  int E_priority[NPROC]; // the effective priority of the process
+  int R_priority[NPROC];      // the real priority of the process
+  int pid[NPROC];                // the PID of each process
+  int ticks[NPROC];              // the number of ticks each process has accumulated 
+};
+
+#endif // _PSTAT_H_
